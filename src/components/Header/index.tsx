@@ -1,6 +1,9 @@
 import * as C from './styles'
+import { Link } from 'react-router-dom'
+
 
 export const Header = () => {
+
     return (
         <> 
             <C.Container>
@@ -10,21 +13,25 @@ export const Header = () => {
                 <C.MenuArea>
                     <C.Row></C.Row>
                     <C.Menu>
+                        <Link to="/">
+                            <C.MenuItem>
+                                    <p>01</p>
+                                    HOME
+                            </C.MenuItem>
+                        </Link>
+                        <Link to="/Destination">
+                            <C.MenuItem>
+                                    <p>02</p>
+                                    DESTINATION
+                            </C.MenuItem>
+                        </Link>
                         <C.MenuItem>
-                            <p>01</p>
-                            HOME
+                                <p>03</p>
+                                CREW
                         </C.MenuItem>
                         <C.MenuItem>
-                            <p>02</p>
-                            DESTINATION
-                        </C.MenuItem>
-                        <C.MenuItem>
-                            <p>03</p>
-                            CREW
-                        </C.MenuItem>
-                        <C.MenuItem>
-                            <p>04</p>
-                            TECHNOLOGY
+                                <p>04</p>
+                                TECHNOLOGY
                         </C.MenuItem>
                     </C.Menu>
                 </C.MenuArea>

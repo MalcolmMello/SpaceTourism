@@ -38,6 +38,11 @@ export const MenuArea = styled.div`
     background-color: rgba(250, 250, 250, 0.04);
     backdrop-filter: blur(10px);
     color: #FFF;
+
+    a {
+        text-decoration: none;
+        color: #FFF;
+    }
 `
 
 export const Menu = styled.ul`
@@ -45,15 +50,19 @@ export const Menu = styled.ul`
     justify-content: center;
     align-items: center;
     list-style-type: none;
+
+    .selected {
+        border-bottom: 1px solid #FFF;
+    }
 `
 
 export const MenuItem = styled.li`
     display: flex;
+    height: 96px;
     align-items: center;
     margin: 0px;
     margin-left: 50px;
     cursor: pointer;
-
     p {
         margin: 0;
         margin-right: 15px;

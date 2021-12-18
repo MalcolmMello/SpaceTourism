@@ -1,8 +1,7 @@
 import * as C from './styles'
+import background from '../../spacets/startercode/assets/homeitems/homeground.jpg'
 
 export const Home = () => {
-    const background: string = require("../../spacets/startercode/assets/homeitems/homeground.jpg")
-
     return (
         <C.Container background={background}>
             <C.ContentArea>
