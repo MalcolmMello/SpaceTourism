@@ -25,10 +25,12 @@ export const Header = () => {
                                     DESTINATION
                             </C.MenuItem>
                         </Link>
-                        <C.MenuItem>
-                                <p>03</p>
-                                CREW
-                        </C.MenuItem>
+                        <Link to="/Crew">
+                            <C.MenuItem>
+                                    <p>03</p>
+                                    CREW
+                            </C.MenuItem>
+                        </Link>
                         <C.MenuItem>
                                 <p>04</p>
                                 TECHNOLOGY

@@ -21,7 +21,7 @@ interface Dest {
 }
 
 export const Destination = () => {
-    const [data, setData] = useState([Data]);
+    const [data, setData] = useState([Data])
 
     const [dest, setDest] = useState<Dest[]>([])
 
@@ -91,6 +91,7 @@ export const Destination = () => {
                     filteredPlanet.map((item, index) => {
                         return (
                             <PlanetInfo
+                                key={index}
                                 name={item.name}
                                 images={pic}
                                 desc={item.description}
