@@ -3,9 +3,11 @@ import { useState, useEffect } from 'react';
 import background from '../../spacets/startercode/assets/technology/background-technology-desktop.jpg'
 import { TechInfo } from '../../components/TechInfo';
 import { Data } from '../../spacets/startercode/data'
+import { Step } from '../../components/Step';
 import LaunchPic from '../../spacets/startercode/assets/technology/image-launch-vehicle-portrait.jpg'
 import SpaceportPic from '../../spacets/startercode/assets/technology/image-space-capsule-portrait.jpg'
 import SpaceCapsule from '../../spacets/startercode/assets/technology/image-spaceport-portrait.jpg'
+import { useForm, FormActions } from '../../contexts/FormContext'
 
 interface Tech { 
     name: string; 
@@ -17,6 +19,15 @@ interface Tech {
 }
 
 export const Technology = () => {
+    const {state, dispatch} = useForm()
+
+    useEffect(()=>{
+        dispatch({
+            type: FormActions.setCurrentHeader,
+            payload: 3
+        })
+    },[])
+
     const [data, setData] = useState([Data]);
 
     const [techy, setTechy] = useState<Tech[]>([])
@@ -39,16 +50,31 @@ export const Technology = () => {
     const handleLaunch = () => {
         setVehicle('Launch vehicle')
         setPic(LaunchPic)
+
+        dispatch({
+            type: FormActions.setCurrentTechnology,
+            payload: 0
+        })
     }
 
     const handleSpaceport = () => {
         setVehicle('Spaceport')
         setPic(SpaceportPic)
+
+        dispatch({
+            type: FormActions.setCurrentTechnology,
+            payload: 1
+        })
     }
 
     const handleCapsule = () => {
         setVehicle('Space capsule')
         setPic(SpaceCapsule)
+
+        dispatch({
+            type: FormActions.setCurrentTechnology,
+            payload: 2
+        })
     }
 
     useEffect(()=>{
@@ -64,9 +90,21 @@ export const Technology = () => {
                 </C.TextArea>
                 <C.TechnologyArea>
                     <C.StepArea>
-                        <C.Step onClick={handleLaunch}>1</C.Step>
-                        <C.Step onClick={handleSpaceport}>2</C.Step>
-                        <C.Step onClick={handleCapsule}>3</C.Step>
+                        <Step
+                            onClick={handleLaunch}
+                            step="1"
+                            active={state.currentTechnology === 0}
+                        />
+                        <Step
+                            onClick={handleSpaceport}
+                            step="2"
+                            active={state.currentTechnology === 1}
+                        />
+                        <Step
+                            onClick={handleCapsule}
+                            step="3"
+                            active={state.currentTechnology === 2}
+                        />
                     </C.StepArea>
                     {filteredTech &&
                         filteredTech.map((item, index)=>{

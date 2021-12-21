@@ -18,7 +18,7 @@ export const ContentArea = styled.div`
 
 export const TextArea = styled.div`
     flex: 1;
-    color: rgb(255, 255, 230);
+    color: #FFF;
     .subtitle {
         font-size: 28px;
         margin: 0px;
@@ -48,6 +48,11 @@ export const Circle = styled.div`
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-    background-color: rgb(255, 255, 230);
+    background-color: #FFF;
     font-size: 32px;
+    cursor: pointer;
+    transition: all ease 0.3s;
+    &:hover {
+        box-shadow: 0 0 5em #000;
+    }
 `

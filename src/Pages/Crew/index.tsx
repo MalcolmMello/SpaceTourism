@@ -1,12 +1,14 @@
 import * as C from './styles'
 import { useState, useEffect } from 'react'
 import { CrewInfo } from '../../components/CrewInfo'
+import { CrewItem } from '../../components/CrewItem'
 import { Data } from '../../spacets/startercode/data'
 import background from '../../spacets/startercode/assets/crew/backgroundcrewdesktop.jpg'
 import DouglasPic from '../../spacets/startercode/assets/crew/image-douglas-hurley.png'
 import MarkPic from '../../spacets/startercode/assets/crew/image-mark-shuttleworth.png'
 import VictorPic from '../../spacets/startercode/assets/crew/image-victor-glover.png'
 import AnoushehPic from '../../spacets/startercode/assets/crew/image-anousheh-ansari.png'
+import { useForm, FormActions } from '../../contexts/FormContext'
 
 interface Crew { 
     name: string; 
@@ -19,6 +21,15 @@ interface Crew {
 }
 
 export const Crew = () => {
+    const {state, dispatch} = useForm()
+
+    useEffect(()=>{
+        dispatch({
+            type: FormActions.setCurrentHeader,
+            payload: 2
+        })
+    },[])
+
     const [data, setData] = useState([Data]);
 
     const [team, setTeam] = useState<Crew[]>([])
@@ -34,29 +45,48 @@ export const Crew = () => {
         data.map((item)=>{
             const crew = item.crew
             setTeam(crew)
-            console.log(team)
         })
         setCoach('Douglas Hurley')
     },[])
 
     const handleDouglas = () => {
-        setCoach('Douglas Hurley')
-        setPic(DouglasPic)
+        setCoach('Douglas Hurley');
+        setPic(DouglasPic);
+
+        dispatch({
+            type: FormActions.setCurrentCrew,
+            payload: 0
+        })
     }
 
     const handleMark = () => {
         setCoach('Mark Shuttleworth')
         setPic(MarkPic)
+
+        dispatch({
+            type: FormActions.setCurrentCrew,
+            payload: 1
+        })
     }
 
     const handleVictor = () => {
         setCoach('Victor Glover')
         setPic(VictorPic)
+
+        dispatch({
+            type: FormActions.setCurrentCrew,
+            payload: 2
+        })
     }
 
     const handleAnousheh = () => {
         setCoach('Anousheh Ansari')
         setPic(AnoushehPic)
+
+        dispatch({
+            type: FormActions.setCurrentCrew,
+            payload: 3
+        })
     }
 
     useEffect(()=>{
@@ -86,13 +116,24 @@ export const Crew = () => {
                 </C.CrewData>
                 <C.CrewArea>
                     <C.CrewName>
-                        <C.CrewItem onClick={handleDouglas}></C.CrewItem>
+                        <CrewItem
+                            onClick={handleDouglas}
+                            active={state.currentCrew === 0}
+                        />
+
+                        <CrewItem
+                            onClick={handleMark}
+                            active={state.currentCrew === 1}
+                        />
                         
-                        <C.CrewItem onClick={handleMark}></C.CrewItem>
-                        
-                        <C.CrewItem onClick={handleVictor}></C.CrewItem>
-                        
-                        <C.CrewItem onClick={handleAnousheh}></C.CrewItem>
+                        <CrewItem
+                            onClick={handleVictor}
+                            active={state.currentCrew === 2}
+                        />
+                        <CrewItem
+                            onClick={handleAnousheh}
+                            active={state.currentCrew === 3}
+                        />
                     </C.CrewName>
                 </C.CrewArea>
             </C.ContentArea>

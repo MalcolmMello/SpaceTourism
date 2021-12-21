@@ -1,8 +1,12 @@
 import * as C from './styles'
 import { Link } from 'react-router-dom'
+import { MenuItem } from '../MenuItem'
+import { useForm } from '../../contexts/FormContext'
+
 
 
 export const Header = () => {
+    const {state} = useForm()
 
     return (
         <> 
@@ -13,30 +17,30 @@ export const Header = () => {
                 <C.MenuArea>
                     <C.Row></C.Row>
                     <C.Menu>
-                        <Link to="/">
-                            <C.MenuItem>
-                                    <p>01</p>
-                                    HOME
-                            </C.MenuItem>
-                        </Link>
-                        <Link to="/Destination">
-                            <C.MenuItem>
-                                    <p>02</p>
-                                    DESTINATION
-                            </C.MenuItem>
-                        </Link>
-                        <Link to="/Crew">
-                            <C.MenuItem>
-                                    <p>03</p>
-                                    CREW
-                            </C.MenuItem>
-                        </Link>
-                        <Link to="/Technology">
-                            <C.MenuItem>
-                                    <p>04</p>
-                                    TECHNOLOGY
-                            </C.MenuItem>
-                        </Link>
+                        <MenuItem
+                            path="/"
+                            step="01"
+                            desc="HOME"
+                            active={state.currentHeader === 0}
+                        />
+                        <MenuItem
+                            path="/Destination"
+                            step="02"
+                            desc="DESTINATION"
+                            active={state.currentHeader === 1}
+                        />
+                        <MenuItem
+                            path="/Crew"
+                            step="03"
+                            desc="CREW"
+                            active={state.currentHeader === 2}
+                        />
+                        <MenuItem
+                            path="/Technology"
+                            step="04"
+                            desc="TECHNOLOGY"
+                            active={state.currentHeader === 3}
+                        />
                     </C.Menu>
                 </C.MenuArea>
             </C.Container>

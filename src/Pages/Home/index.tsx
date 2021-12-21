@@ -1,7 +1,26 @@
 import * as C from './styles'
 import background from '../../spacets/startercode/assets/homeitems/homeground.jpg'
+import { useForm, FormActions } from '../../contexts/FormContext'
+import { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
+
 
 export const Home = () => {
+    const {state, dispatch} = useForm()
+
+    const navigate = useNavigate()
+
+    useEffect(()=>{
+        dispatch({
+            type: FormActions.setCurrentHeader,
+            payload: 0
+        })
+    },[])
+
+    const handleDestination = () => {
+        navigate('/Destination')
+    }
+    
     return (
         <C.Container background={background}>
             <C.ContentArea>
@@ -15,7 +34,7 @@ export const Home = () => {
                     </p>
                 </C.TextArea>
                 <C.ExploreArea>
-                    <C.Circle>
+                    <C.Circle onClick={handleDestination}>
                         EXPLORE
                     </C.Circle>
                 </C.ExploreArea>

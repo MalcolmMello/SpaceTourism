@@ -19,7 +19,7 @@ export const ContentArea = styled.div`
 export const TextArea = styled.div`
     max-height: 34px;
     flex: 1;
-    color: rgb(255, 255, 230);
+    color: #FFF;
     .subtitle {
         font-size: 28px;
         margin: 0px;
@@ -64,7 +64,7 @@ export const PlanetItem = styled.li`
     margin-right: 50px;
     cursor: pointer;
     padding: 5px;
-    color: rgb(255,255,230);
+    color: #FFF;
     p {
         margin: 0;
         margin-right: 15px;

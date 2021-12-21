@@ -56,14 +56,6 @@ export const Step = styled.div`
     cursor: pointer
 `
 
-export const DescArea = styled.div``
-
-export const DescTech = styled.p``
-
-export const DescTitle = styled.h1``
-
-export const Desc = styled.p``
-
 export const ImageArea = styled.div`
     display: flex;
     position: absolute;

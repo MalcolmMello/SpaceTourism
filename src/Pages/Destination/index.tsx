@@ -1,13 +1,14 @@
 import * as C from './styles'
 import { useEffect, useState } from 'react'
 import { Data } from '../../spacets/startercode/data'
+import { PlanetItem } from '../../components/PlanetItem'
 import background from '../../spacets/startercode/assets/destination/destinationdesktop.jpg'
 import MoonPic from '../../spacets/startercode/assets/destination/image-moon.png'
 import MarsPic from '../../spacets/startercode/assets/destination/image-mars.png'
 import EuropaPic from '../../spacets/startercode/assets/destination/image-europa.png'
 import TitanPic from '../../spacets/startercode/assets/destination/image-titan.png'
 import { PlanetInfo } from '../../components/PlanetInfo'
-
+import { useForm, FormActions } from '../../contexts/FormContext'
 
 interface Dest { 
     name: string; 
@@ -21,6 +22,15 @@ interface Dest {
 }
 
 export const Destination = () => {
+    const {state, dispatch} = useForm()
+
+    useEffect(()=>{
+        dispatch({
+            type: FormActions.setCurrentHeader,
+            payload: 1
+        })
+    },[])
+    
     const [data, setData] = useState([Data])
 
     const [dest, setDest] = useState<Dest[]>([])
@@ -43,21 +53,41 @@ export const Destination = () => {
     const handleMoon = () => {
         setPlanet('Moon')
         setPic(MoonPic)
+
+        dispatch({
+            type: FormActions.setCurrentPlanet,
+            payload: 0
+        })
     }
 
     const handleMars = () => {
         setPlanet('Mars')
         setPic(MarsPic)
+
+        dispatch({
+            type: FormActions.setCurrentPlanet,
+            payload: 1
+        })
     }
 
     const handleEuropa = () => {
         setPlanet('Europa')
         setPic(EuropaPic)
+
+        dispatch({
+            type: FormActions.setCurrentPlanet,
+            payload: 2
+        })
     }
 
     const handleTitan = () => {
         setPlanet('Titan')
         setPic(TitanPic)
+
+        dispatch({
+            type: FormActions.setCurrentPlanet,
+            payload: 3
+        })
     }
 
     useEffect(()=>{
@@ -73,18 +103,26 @@ export const Destination = () => {
                 </C.TextArea>
                 <C.PlanetArea>
                     <C.PlanetNames>
-                        <C.PlanetItem onClick={handleMoon}>
-                                MOON
-                        </C.PlanetItem>
-                        <C.PlanetItem onClick={handleMars}>
-                                MARS
-                        </C.PlanetItem>
-                        <C.PlanetItem onClick={handleEuropa}>
-                                EUROPA
-                        </C.PlanetItem>
-                        <C.PlanetItem onClick={handleTitan}>
-                                TITAN
-                        </C.PlanetItem>
+                        <PlanetItem 
+                            planetName="MOON"
+                            onClick={handleMoon}
+                            active={state.currentPlanet === 0}
+                        />
+                        <PlanetItem 
+                            planetName="MARS"
+                            onClick={handleMars}
+                            active={state.currentPlanet === 1}
+                        />
+                        <PlanetItem 
+                            planetName="EUROPA"
+                            onClick={handleEuropa}
+                            active={state.currentPlanet === 2}
+                        />
+                        <PlanetItem 
+                            planetName="TITAN"
+                            onClick={handleTitan}
+                            active={state.currentPlanet === 3}
+                        />
                     </C.PlanetNames>
                 </C.PlanetArea>
                 {filteredPlanet &&

@@ -24,13 +24,13 @@ export const InfoArea = styled.div`
 export const Title = styled.h1`
     font-size: 100px;
     margin: 0px;
-    color: rgb(255,255,230);
+    color: #FFF;
 `
 
 export const Desc = styled.p` 
     font-size: 18px;
     font-weight: 300;
-    color: rgb(255,255,230);
+    color: #FFF;
 `
 
 export const TravelData = styled.div`
@@ -39,7 +39,7 @@ export const TravelData = styled.div`
     align-items: center;
     width: 490px;
     border-top: 1px solid #383B4B;
-    color: rgb(255,255,230);
+    color: #FFF;
 `
 
 export const Kilometers = styled.div`

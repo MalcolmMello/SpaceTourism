@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Container = styled.div`
     display: flex;
     width: 490px;
-    color: #FFFFE6;
+    color: ##FFF;
 `
 
 export const DataArea = styled.div`
@@ -15,13 +15,15 @@ export const DataArea = styled.div`
 export const Role = styled.p`
     font-size: 32px;
     margin: 0px;
-    font-weight: 300
+    font-weight: 300;
+    color: #FFF;
 `
 
 export const Name = styled.h1`
     width: 600px;
     font-size: 56px;
     margin: 0;
+    color: #FFF
 `
 
 export const Bio = styled.p`

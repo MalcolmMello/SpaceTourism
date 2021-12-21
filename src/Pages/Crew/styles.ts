@@ -20,7 +20,7 @@ export const ContentArea = styled.div`
 export const TextArea = styled.div`
     max-height: 34px;
     flex: 1;
-    color: rgb(255, 255, 230);
+    color: #FFF;
     .subtitle {
         font-size: 28px;
         margin: 0px;
@@ -72,9 +72,9 @@ export const CrewItem = styled.li`
     margin-right: 20px;
     cursor: pointer;
     padding: 5px;
-    color: rgb(255,255,230);
+    color: #FFF;
     border-radius: 50%;
-    background-color: #FFFFE6;
+    border: 1px solid #FFF;
     p {
         margin: 0;
         margin-right: 15px;
