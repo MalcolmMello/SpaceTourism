@@ -66,7 +66,7 @@ export const CrewName = styled.ul`
 export const CrewItem = styled.li`
     display: flex;
     width:11px;
-    height: 11px;;
+    height: 11px;
     align-items: center;
     margin: 0px;
     margin-right: 20px;

@@ -31,7 +31,7 @@ export const Row = styled.div`
     margin-left: -320px;
 `
 
-export const MenuArea = styled.div`
+export const MenuArea = styled.nav`
     display: flex;
     height: inherit;
     flex: 2;
