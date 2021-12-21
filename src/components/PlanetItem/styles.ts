@@ -10,6 +10,7 @@ export const Container = styled.div<{active: boolean}>`
     padding: 5px;
     color: #FFF;
     border-bottom: ${props => props.active ? '3px solid #FFF' : '3px solid transparent'};
+    transition: all ease 0.3s;
     
     p {
         margin: 0;

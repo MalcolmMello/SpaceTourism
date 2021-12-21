@@ -18,4 +18,9 @@ export const Container = styled.div<{active: boolean}>`
         margin-right: 15px;
         font-weight: bold;
     }
+    
+    transition: all ease 0.3s;
+    &:hover {
+        background-color: ${props => props.active ? '#FFF' : '#EEE'}
+    }
 `

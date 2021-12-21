@@ -8,6 +8,7 @@ export const MenuItem = styled.li<{active: boolean}>`
     margin-left: 50px;
     cursor: pointer;
     border-bottom: ${props => props.active ? '3px solid #FFF' : '3px solid transparent'};
+    transition: all ease 0.3s;
     p {
         margin: 0;
         margin-right: 15px;
