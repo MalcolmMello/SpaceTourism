@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const MenuItem = styled.li<{active: boolean}>`
+export const MenuItem = styled.li<{active: boolean, isOpen: boolean}>`
     display: flex;
     height: 96px;
     align-items: center;
@@ -17,5 +17,17 @@ export const MenuItem = styled.li<{active: boolean}>`
 
     &:hover {
         border-bottom: ${props => props.active ? '3px solid #FFF' : '3px solid #999'};
+    }
+
+    @media(max-width: 1024px) {
+        margin-left: 40px;
+        font-size: 14px;
+        p {
+            display: none
+        }
+    }
+
+    @media(max-width: 600px) {
+        display: ${props => props.isOpen ? 'flex' : 'none'};
     }
 `

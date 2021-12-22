@@ -100,6 +100,31 @@ export const Crew = () => {
                 <C.TextArea>
                     <p className="subtitle">02 MEET YOUR CREW</p>
                 </C.TextArea>
+                <C.PicAreaPhone>
+                    <img src={pic}/>
+                </C.PicAreaPhone>
+                <C.CrewArea>
+                    <C.CrewNamePhone>
+                            <CrewItem
+                                onClick={handleDouglas}
+                                active={state.currentCrew === 0}
+                            />
+
+                            <CrewItem
+                                onClick={handleMark}
+                                active={state.currentCrew === 1}
+                            />
+                            
+                            <CrewItem
+                                onClick={handleVictor}
+                                active={state.currentCrew === 2}
+                            />
+                            <CrewItem
+                                onClick={handleAnousheh}
+                                active={state.currentCrew === 3}
+                            />
+                    </C.CrewNamePhone>
+                </C.CrewArea>
                 <C.CrewData>
                     {filteredCrew &&
                         filteredCrew.map((item, index) => {

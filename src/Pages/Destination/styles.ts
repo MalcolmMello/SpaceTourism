@@ -1,11 +1,19 @@
 import styled from "styled-components";
+import background from '../../spacets/startercode/assets/destination/destinationdesktop.jpg'
+import backgroundTablet from '../../spacets/startercode/assets/destination/background-destination-tablet.jpg'
 
-export const Container = styled.div<{background: string}>`
+
+export const Container = styled.div`
     display: flex;
     height: 100vh;
-    background-image: url(${props => props.background});
+    background-image: url(${background});
     background-position: center;
     background-size: cover;
+    overflow: auto;
+
+    @media(max-width: 1024px) {
+        background-image: url(${backgroundTablet});
+    }
 `
 
 export const ContentArea = styled.div`
@@ -14,6 +22,12 @@ export const ContentArea = styled.div`
     width: 980px;
     height: calc(100vh - 350px);
     margin: auto;
+
+    @media(max-width: 600px) {
+        width: auto;
+        margin: 0px;
+        margin-top: 120px
+    }
 `
 
 export const TextArea = styled.div`
@@ -24,6 +38,14 @@ export const TextArea = styled.div`
         font-size: 28px;
         margin: 0px;
         font-weight: 300
+    }
+
+    @media(max-width: 600px) {
+        display: flex;
+        justify-content: center;
+        .subtitle {
+            font-size: 16px
+        }
     }
 `
 
@@ -38,6 +60,16 @@ export const PlanetArea = styled.div`
         text-decoration: none;
         color: #FFF;
     }
+
+    @media(max-width: 1024px) {
+        margin-top: 30px;
+        justify-content: center
+    }
+
+    @media(max-width: 600px) {
+        max-height: 28px;
+        margin-top: 10px;
+    }
 `
 
 export const PlanetNames = styled.ul`
@@ -50,24 +82,7 @@ export const PlanetNames = styled.ul`
     margin: 0px;
     padding: 0px;
 
-
-    .selected {
-        border-bottom: 1px solid #FFF;
-    }
-`
-
-export const PlanetItem = styled.li`
-    display: flex;
-    height: 34px;
-    align-items: center;
-    margin: 0px;
-    margin-right: 50px;
-    cursor: pointer;
-    padding: 5px;
-    color: #FFF;
-    p {
-        margin: 0;
-        margin-right: 15px;
-        font-weight: bold;
+    @media(max-width: 600px) {
+        width: auto
     }
 `

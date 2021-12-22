@@ -22,7 +22,7 @@ export const Home = () => {
     }
     
     return (
-        <C.Container background={background}>
+        <C.Container>
             <C.ContentArea>
                 <C.TextArea>
                     <p className="subtitle">SO, YOU WANT TO TRAVEL TO</p>

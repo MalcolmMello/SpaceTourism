@@ -2,7 +2,16 @@ import styled from "styled-components";
 
 export const Container = styled.div`
     display: flex;
-    color: #FFF
+    color: #FFF;
+
+    @media(max-width: 1024px) {
+        flex-direction: column;
+        margin-top: 50px
+    }
+
+    @media(max-width: 600px) {
+        margin-top: 20px;
+    }
 `
 
 export const ImageArea = styled.div`
@@ -12,6 +21,19 @@ export const ImageArea = styled.div`
         width: 370px;
         height: 370px;
     }
+
+    @media(max-width: 1024px) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    @media(max-width: 600px) {
+        img {
+            width: 170px;
+            height: 170px;
+        }
+    }
 `
 
 export const InfoArea = styled.div`
@@ -19,18 +41,43 @@ export const InfoArea = styled.div`
     flex: 1;
     flex-direction: column;
     align-items: flex-start;
+
+    @media(max-width: 1024px) {
+        display: flex;
+        justify-content: center;
+        align-items: center
+    }
+
+    @media(max-width: 600px) {
+        padding: 10px;
+    }
 `
 
 export const Title = styled.h1`
     font-size: 100px;
     margin: 0px;
     color: #FFF;
+
+    @media(max-width: 600px) {
+        font-size: 48px;
+    }
 `
 
 export const Desc = styled.p` 
     font-size: 18px;
     font-weight: 300;
     color: #FFF;
+    text-align: center;
+
+    @media(max-width: 1024px) {
+        width: 570px
+    }
+
+    @media(max-width: 600px) {
+        font-size: 15px;
+        margin: 0px;
+        width: auto
+    }
 `
 
 export const TravelData = styled.div`
@@ -40,6 +87,19 @@ export const TravelData = styled.div`
     width: 490px;
     border-top: 1px solid #383B4B;
     color: #FFF;
+
+    @media(max-width: 1024px) {
+        display: flex;
+        justify-content: center;
+        align-items: center
+    }
+
+    @media(max-width: 600px) {
+        flex-direction: column;
+        width: auto;
+        height: auto;
+        margin-top: 10px;
+    }
 `
 
 export const Kilometers = styled.div`
@@ -50,6 +110,18 @@ export const Kilometers = styled.div`
         margin: 0px;
         font-weight: 300;
         margin-bottom: 10px;
+    }
+
+    @media(max-width: 600px) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 10px;
+
+        p {
+            margin-bottom: 5px
+        }
     }
 `
 
@@ -62,5 +134,18 @@ export const Days = styled.div`
         margin: 0px;
         font-weight: 300;
         margin-bottom: 10px;
+    }
+
+    @media(max-width: 600px) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-left: 0px;
+        margin-top: 10px;
+
+        p {
+            margin-bottom: 5px
+        }
     }
 `

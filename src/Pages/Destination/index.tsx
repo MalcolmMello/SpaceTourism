@@ -96,7 +96,7 @@ export const Destination = () => {
     },[planet])
 
     return (
-        <C.Container background={background}>
+        <C.Container>
             <C.ContentArea>
                 <C.TextArea>
                     <p className="subtitle">01 PICK YOUR DESTINATION</p>

@@ -1,6 +1,6 @@
 <h1>🚀🚀 Viagem ao Espaço 🚀🚀</h1>
 
-<h3>Em desenvolvimento</h3>
+<h3>Em desenvolvimento...</h3>
 
 <h2>Sobre</h2>
 

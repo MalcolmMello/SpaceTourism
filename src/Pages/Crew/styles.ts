@@ -7,6 +7,17 @@ export const Container = styled.div<{background: string}>`
     background-position: center;
     background-size: cover;
     padding: 0px 60px;
+
+    @media(max-width: 1024px) {
+        flex-direction: column;
+        align-items: center
+    }
+
+    @media(max-width: 600px) {
+        justify-content: center;
+        overflow: auto
+    }
+    
 `
 
 export const ContentArea = styled.div`
@@ -15,6 +26,17 @@ export const ContentArea = styled.div`
     width: 980px;
     height: calc(100vh - 350px);
     margin: auto;
+
+    @media(max-width: 1024px) {
+        justify-content: center;
+        width: 800px;
+    }
+
+    @media(max-width: 600px) {
+        width: auto;
+        margin: 0px;
+        margin-top: 96px;
+    }
 `
 
 export const TextArea = styled.div`
@@ -26,12 +48,32 @@ export const TextArea = styled.div`
         margin: 0px;
         font-weight: 300
     }
+
+    @media(max-width: 1024px) {
+        .subtitle {
+            font-size: 16px;
+        }
+    }
+
+    @media(max-width: 600px) {
+        p {
+            text-align: center
+        }
+    }
 `
 
 export const CrewData = styled.div`
     display: flex;
     margin-top: 60px;
     margin-bottom: 20px;
+
+    @media(max-width: 1024px) {
+        justify-content: center
+    }
+
+    @media(max-width: 600px) {
+        margin-top: 20px
+    }
 `
 
 export const CrewArea = styled.div`
@@ -44,6 +86,14 @@ export const CrewArea = styled.div`
     a {
         text-decoration: none;
         color: #FFF;
+    }
+
+    @media(max-width: 1024px) {
+        justify-content: center;
+    }
+
+    @media(max-width: 600px) {
+        margin-top: 10px
     }
 `
 
@@ -58,27 +108,31 @@ export const CrewName = styled.ul`
     padding: 0px;
 
 
-    .selected {
-        border-bottom: 1px solid #FFF;
+    @media(max-width: 1024px) {
+        justify-content: center;
+        width: 600px;
+        margin-left: 80px
+    }
+
+    @media(max-width: 600px) {
+        display: none;
+        width: auto;
     }
 `
 
-export const CrewItem = styled.li`
-    display: flex;
-    width:11px;
-    height: 11px;
+export const CrewNamePhone = styled.div`
+    display: none;
+    width: 490px;
+    height: 34px;
+    justify-content: flex-start;
     align-items: center;
+    list-style-type: none;
     margin: 0px;
-    margin-right: 20px;
-    cursor: pointer;
-    padding: 5px;
-    color: #FFF;
-    border-radius: 50%;
-    border: 1px solid #FFF;
-    p {
-        margin: 0;
-        margin-right: 15px;
-        font-weight: bold;
+    padding: 0px;
+
+    @media(max-width: 600px) {
+        display: flex;
+        width: auto
     }
 `
 
@@ -90,5 +144,29 @@ export const PicArea = styled.div`
 
     img {
         height: 520px;
+    }
+
+
+    @media(max-width: 600px) {
+        display: none
+    }
+`
+
+export const PicAreaPhone = styled.div`
+    display: none;
+    justify-content: center;
+    width: auto;
+    align-items: center;
+    margin-top: 20px;
+
+    img {
+        height: 223px;
+    }
+
+    @media(max-width: 600px) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-bottom: 1px solid #CCC;
     }
 `

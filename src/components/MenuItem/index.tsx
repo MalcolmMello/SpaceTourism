@@ -5,13 +5,14 @@ interface Props {
     path: string,
     step: string,
     desc: string,
-    active: boolean
+    active: boolean,
+    isOpen: boolean
 }
 
-export const MenuItem = ({path, step, desc, active}: Props) => {
+export const MenuItem = ({path, step, desc, active, isOpen}: Props) => {
     return (
         <Link to={path}>
-            <C.MenuItem active={active}>
+            <C.MenuItem active={active} isOpen={isOpen}>
                 <p>{step}</p>
                 {desc}
             </C.MenuItem>

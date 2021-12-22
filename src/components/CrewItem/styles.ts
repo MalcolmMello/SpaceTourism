@@ -23,4 +23,14 @@ export const Container = styled.div<{active: boolean}>`
     &:hover {
         background-color: ${props => props.active ? '#FFF' : '#EEE'}
     }
+
+    @media(max-width: 1024px) {
+        margin-right: 0px;
+        margin-left: 20px
+    }
+
+    @media(max-width: 600px) {
+        margin-right: 10px;
+        margin-left: 0px
+    }
 `
