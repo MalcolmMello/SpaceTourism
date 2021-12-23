@@ -5,9 +5,13 @@ export const Container = styled.div<{background: string}>`
     justify-content: center;
     align-items: center;
     height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
     background-image: url(${props => props.background});
     background-position: center;
     background-size: cover;
+
+    
 `
 
 export const ContentArea = styled.div`
@@ -16,6 +20,10 @@ export const ContentArea = styled.div`
     width: 980px;
     height: calc(100vh - 350px);
     margin: auto;
+
+    @media(max-width: 1024px) {
+        width: 100vw
+    }
 `
 
 export const TextArea = styled.div`
@@ -27,6 +35,16 @@ export const TextArea = styled.div`
         margin: 0px;
         font-weight: 300
     }
+
+    @media(max-width: 1024px) {
+        text-align: center;
+    }
+
+    @media(max-width: 600px) {
+        .subtitle {
+            font-size: 16px;
+        }
+    }
 `
 
 export const TechnologyArea = styled.div`
@@ -35,11 +53,22 @@ export const TechnologyArea = styled.div`
     color: #FFF;
     grid-template-columns: 1fr 2fr 2fr;
     margin-top: 20px;
+
+    @media(max-width: 1024px) {
+        display: flex;
+        flex-direction: column;
+        width: 100vw;
+    }
 `
 
 export const StepArea = styled.div`
     display: flex;
     flex-direction: column;
+
+    @media(max-width: 1024px) {
+        flex-direction: row;
+        justify-content: center;
+    }
 `
 
 export const Step = styled.div`
@@ -67,5 +96,25 @@ export const ImageArea = styled.div`
     img {
         height: 450px;
         margin-bottom: -80px;
+    }
+
+    @media(max-width: 1024px) {
+        display: none
+    }
+`
+
+export const ImagePhone = styled.div`
+    display: none;
+    width: 100vw;
+    margin-top: 60px;
+    img {
+        width: 100vw;
+    }
+    @media(max-width: 1024px) {
+        display: flex
+    }
+
+    @media(max-width: 600px) {
+        margin-top: 30px
     }
 `

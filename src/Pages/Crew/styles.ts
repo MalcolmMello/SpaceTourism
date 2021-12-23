@@ -10,7 +10,7 @@ export const Container = styled.div<{background: string}>`
 
     @media(max-width: 1024px) {
         flex-direction: column;
-        align-items: center
+        align-items: center;
     }
 
     @media(max-width: 600px) {
@@ -29,11 +29,12 @@ export const ContentArea = styled.div`
 
     @media(max-width: 1024px) {
         justify-content: center;
-        width: 800px;
+        width: min-content;
+
+        margin-top: 100px
     }
 
     @media(max-width: 600px) {
-        width: auto;
         margin: 0px;
         margin-top: 96px;
     }
@@ -68,7 +69,8 @@ export const CrewData = styled.div`
     margin-bottom: 20px;
 
     @media(max-width: 1024px) {
-        justify-content: center
+        justify-content: center;
+        margin-top: 0px
     }
 
     @media(max-width: 600px) {
@@ -111,7 +113,6 @@ export const CrewName = styled.ul`
     @media(max-width: 1024px) {
         justify-content: center;
         width: 600px;
-        margin-left: 80px
     }
 
     @media(max-width: 600px) {

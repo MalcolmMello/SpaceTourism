@@ -13,10 +13,14 @@ e descrição, conheça a equipe técnica e as tecnologias usadas na viagem!
 - [x] Descrição e detalhes dos destinos
 - [X] Área para conhecer a equipe técnica
 - [x] Descrição das tecnologias usadas na viagem
-- [] Totalmente responsivo (Em breve...)
+- [X] Totalmente responsivo
 
 <h1>
     <img alt="Readme" title= "Readme" src="./gifs/youwannatraveltospace.gif" />
+</h1>
+
+<h1>
+    <img alt="Readme" title= "Readme" src="./gifs/responsivespace.gif" />
 </h1>
 
 

@@ -5,8 +5,11 @@ import { TechInfo } from '../../components/TechInfo';
 import { Data } from '../../spacets/startercode/data'
 import { Step } from '../../components/Step';
 import LaunchPic from '../../spacets/startercode/assets/technology/image-launch-vehicle-portrait.jpg'
+import LaunchPicPhone from '../../spacets/startercode/assets/technology/image-launch-vehicle-landscape.jpg'
 import SpaceportPic from '../../spacets/startercode/assets/technology/image-space-capsule-portrait.jpg'
+import SpaceportPicPhone from '../../spacets/startercode/assets/technology/image-space-capsule-landscape.jpg'
 import SpaceCapsule from '../../spacets/startercode/assets/technology/image-spaceport-portrait.jpg'
+import SpaceCapsulePhone from '../../spacets/startercode/assets/technology/image-spaceport-landscape.jpg'
 import { useForm, FormActions } from '../../contexts/FormContext'
 
 interface Tech { 
@@ -37,6 +40,8 @@ export const Technology = () => {
     const [vehicle, setVehicle] = useState('')
 
     const [pic, setPic] = useState(LaunchPic)
+
+    const [picPhone, setPicPhone] = useState(LaunchPicPhone)
     
     
     useEffect(()=>{
@@ -50,6 +55,7 @@ export const Technology = () => {
     const handleLaunch = () => {
         setVehicle('Launch vehicle')
         setPic(LaunchPic)
+        setPicPhone(LaunchPicPhone)
 
         dispatch({
             type: FormActions.setCurrentTechnology,
@@ -60,6 +66,7 @@ export const Technology = () => {
     const handleSpaceport = () => {
         setVehicle('Spaceport')
         setPic(SpaceportPic)
+        setPicPhone(SpaceportPicPhone)
 
         dispatch({
             type: FormActions.setCurrentTechnology,
@@ -70,6 +77,7 @@ export const Technology = () => {
     const handleCapsule = () => {
         setVehicle('Space capsule')
         setPic(SpaceCapsule)
+        setPicPhone(SpaceCapsulePhone)
 
         dispatch({
             type: FormActions.setCurrentTechnology,
@@ -88,6 +96,9 @@ export const Technology = () => {
                 <C.TextArea>
                     <p className="subtitle">03 SPACE LAUNCH 101</p>
                 </C.TextArea>
+                <C.ImagePhone>
+                    <img src={picPhone}/>
+                </C.ImagePhone>
                 <C.TechnologyArea>
                     <C.StepArea>
                         <Step

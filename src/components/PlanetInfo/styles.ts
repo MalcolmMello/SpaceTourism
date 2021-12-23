@@ -70,7 +70,8 @@ export const Desc = styled.p`
     text-align: center;
 
     @media(max-width: 1024px) {
-        width: 570px
+        width: 570px;
+        height: 96px;
     }
 
     @media(max-width: 600px) {

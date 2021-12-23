@@ -5,6 +5,10 @@ export const Container = styled.div`
     width: 490px;
     color: ##FFF;
 
+    @media(max-width: 1024px) {
+        width: min-content
+    }
+
     @media(max-width: 600px) {
         width: auto
     }

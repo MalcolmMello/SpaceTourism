@@ -20,4 +20,14 @@ export const Container = styled.div<{active: boolean}>`
         color: ${props => props.active ? '#000' : '#999'};
         border: ${props => props.active ? '1px solid #FFF' : '1px solid #999'}
     }
+
+    @media(max-width: 1024px) {
+        margin: 20px 20px
+    }
+
+    @media(max-width: 600px) {
+        height: 40px;
+        width: 40px;
+        font-size: 16px
+    }
 `

@@ -23,6 +23,10 @@ export const ContentArea = styled.div`
     height: calc(100vh - 350px);
     margin: auto;
 
+    @media(max-width: 1024px) {
+        padding: 10px
+    }
+
     @media(max-width: 600px) {
         width: auto;
         margin: 0px;
